@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border:1px solid black;
+            padding: 5px;
+        }
+        canvas{
+            border:1px solid black;
+        }
+    </style>
+    <script type="text/javascript">
+        var i=0;
+        var xc=new Array();
+        var yc=new Array();
+
+        function draw(event)
+        {
+            var canvas = document.getElementById("canvas");
+            var context = canvas.getContext("2d");
+           document.getElementById("coordinate").innerHTML="X is :"+event.offsetX+"Y is :" +event.offsetY;
+            x_pos = event.offsetX;
+            y_pos = event.offsetY;
+            
+            i++;
+            xc[i]=x_pos;
+            yc[i]=y_pos;
+
+            var x1=xc[i-1];
+            var y1=yc[i-1];
+            var x2=xc[i];
+            var y2=yc[i];
+
+            context.beginPath();
+            context.moveTo(x1,y1);
+            context.lineTo(x2,y2);
+            context.stroke();
+            context.closePath();
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <canvas id="canvas" width="800px" height="600px" onmousemove="draw(event)">
+        </canvas>
+        <p id="coordinate"></p>
+    </div>
+</body>
+</html>

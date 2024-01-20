@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            background-color: black;
+        }
+        .sun{
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, #ff8a05, #fbff00);
+            box-shadow: 0px 0px 30px 30px  #ff6105;
+            position: absolute;
+            top: 30%;
+            left: 40%;
+            border-radius: 50%;
+           
+        }
+        .earth{
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, #05ff2f, #007bff);
+            position: absolute;
+            top: 10%;
+            left: 8%;
+            border-radius: 50%;
+            animation-name: earth;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        img{
+            width: 250px;
+            height: 250px;
+        }
+        .moon{
+            width: 200px;
+            height: 200px;
+            background-color: rgba(255, 255, 255, 0.738);
+            position: absolute;
+            top: 10%;
+            left: 8%;
+            border-radius: 50%;
+            animation-name: moon;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes earth {
+            0%{left: -250px;}
+            50%{left: 0px;background-color:rgb(135, 206, 250)}
+            100%{left:250px;}
+        }
+        @keyframes moon {
+            0%{left: -250px;}
+            25%{left: -150px;background:radial-gradient(circle, #000000, #000000ae);}
+            50%{left: 0px;background: (circle, #000000, #000000);}
+            75%{left:150;background:radial-gradient(circle, #000000, #000000ae);}
+            100%{left:250px;}
+        } 
+    </style>
+</head>
+<body>
+    <div class="sun">
+    <div class="earth">
+        <!-- <img src="earth.png" alt="earth"> -->
+        <div class="moon"></div>
+    </div>
+    </div>
+
+</body>
+</html>

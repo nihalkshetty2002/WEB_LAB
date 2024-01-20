@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Jobs</title>
+    <style>
+			*{
+				box-sizing:border-box;
+			}
+			
+			body {
+			  background-color: #f1f1f1;
+			}
+
+			#regForm {
+			  background-color: #ffffff;
+			  margin: 100px auto;
+			  padding: 40px;
+			  width: 70%;
+			  min-width: 300px;
+			}
+
+			h1 {
+			  text-align: center;  
+			}
+			div{
+				font-size: 21px;
+			}
+			input {
+			  padding: 10px;
+			  width: 100%;
+			  font-size: 17px;
+			  border: 1px solid #aaaaaa;
+			}
+			input[type="radio"]{
+				width:10%;
+			}
+			select{
+				height:40px;
+				width:50%;
+				text-align:center;
+			}
+			input.invalid {
+			  background-color: #ffdddd;
+			}
+			input.valid {
+			 border:1px green solid;
+			}
+			.tab {
+			  display: none;
+			}
+			.error{
+			color:red;
+			}
+			.noerror {
+			  display: none;
+			}
+
+			button {
+			  background-color: #4CAF50;
+			  color: #ffffff;
+			  border: none;
+			  padding: 10px 20px;
+			  font-size: 17px;
+			  cursor: pointer;
+			}
+
+			button:hover {
+			  opacity: 0.8;
+			}
+
+			#prevBtn {
+			  background-color: #bbbbbb;
+			}
+			.step {
+			  height: 15px;
+			  width: 15px;
+			  margin: 0 2px;
+			  background-color: #bbbbbb;
+			  border: none;  
+			  border-radius: 50%;
+			  display: inline-block;
+			  opacity: 0.5;
+			}
+
+			.step.active {
+			  opacity: 1;
+			}
+			.step.finish {
+			  background-color: #4CAF50;
+			}
+
+		</style>
+</head>
+
+<body>
+    <div class="f-container">
+        <form id="regForm" action="" method="post">
+            <fieldset class="tab">
+                <legend>Account Details</legend>
+                <label for="Username">Username:</label>
+                <input type="text" name="Username" id="Username" placeholder="Enter Username as 'Example'">
+                <p class="error">Usernames must start with a upper case letter folowed by lowercase.</p>
+                <label for="Password">Password:</label>
+                <input type="password" name="Password" id="Password">
+                <p class="error">Password must be 8 characters with 1 uppercase, 1 lowercase and 1 special character.
+                </p>
+                <label for="cpassword">Confirm password:</label>
+                <input type="password" name="cpassword" id="cpassword">
+                <p class="error">Passords must match</p>
+            </fieldset>
+            <fieldset class="tab">
+                <legend>Personal details</legend>
+                <label for="fname">First Name:</label>
+                <input type="text" name="Fname" id="fname">
+                <p class="error">Please enter first name</p>
+                <label for="lname">Last Name:</label>
+                <input type="text" name="lname" id="lname">
+                <label for="gender">Gender:</label>
+                <div class="gender">
+                    <label for="mgender">Male</label>
+                    <input type="radio" name="gender" id="mgender">
+                    <label for="fgender">Female</label>
+                    <input type="radio" name="gender" id="fgender">
+                </div>
+
+                <label for="nationality">Nationality:</label>
+                <select name="nationality" id="nationality">
+                    <option value="none">Select nationality</option>
+                    <option value="india">Indian</option>
+                    <option value="foriegn">Foriegner</option>
+                </select><br>
+                <label for="date">Date:</label>
+                <input type="date" name="date" id="date">
+            </fieldset>
+            <fieldset class="tab">
+                <legend>Contact details</legend>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email">
+                <label for="mobile">Phone:</label>
+                <input type="tel" name="mobile" id="mobile">
+                <label for="address">Address:</label>
+                <textarea name="address" id="address" cols="30" rows="5">Please enter address</textarea>
+            </fieldset>
+            <fieldset class="tab">
+                <legend>Social Profiles</legend>
+                <label for="facebook">Facebook URL:</label>
+                <input type="url" name="facebook" id="facebook">
+                <label for="twitter">Twitter URL:</label>
+                <input type="url" name="twitter" id="twitter">
+                <label for="linkedin">LinkedIn URL:</label>
+                <input type="url" name="linkedin" id="linkedin">
+            </fieldset>
+            <fieldset class="tab">
+                <legend>Academic Details</legend>
+                <label for="Ug">Ug Cgpa:</label>
+                <input type="text" name="Ug" id="Ug">
+                <label for="pg">PG Cgpa:</label>
+                <input type="text" name="pg" id="pg">
+                <p>Projects</p>
+                <label for="project1">Project 1:</label>
+                <input type="text" name="project1" id="project1">
+                <label for="project2">Project 2:</label>
+                <input type="text" name="project2" id="project2">
+                <label for="project3">Project 3:</label>
+                <input type="text" name="project" id="project3">
+            </fieldset>
+            <div class="btns"><input type="button" value="PREVIOUS" id="previous" onclick="nextPrevTab(-1);">
+                <button type="button" id="next" onclick="nextPrevTab(1)">Next</button>
+            </div>
+            
+        </form>
+        <div class="center">
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+        </div>
+    </div>
+    <!-- Main javascript -->
+    <script type="text/javascript">
+        var currentTab = 0;
+var validate = true;
+var tab = document.getElementsByClassName("tab");
+showtab(currentTab);
+function showtab(n) {
+    
+    tab[n].style.display = "block";
+    if (n == 0) {
+        document.getElementById("previous").style.display = "none";
+    }
+    else {
+        document.getElementById("previous").style.display = "inline";
+    }
+    console.log(n+"n vlaue tab length"+tab.length);
+    if (n == (tab.length - 1)) {
+        console.log('exexuting');
+        document.getElementById("next").innerHTML = "Submit";
+    }
+    else {
+        document.getElementById("previous").innerHTML = "Next";
+    }
+    fixStepIndicator(currentTab);
+}
+function nextPrevTab(n) {
+    if (validateArea(currentTab)) {
+        console.log(tab.length);
+        console.log(n+"n value");
+        if (n == 3)
+            return false;
+        tab[currentTab].style.display = "none";
+        currentTab += n;
+        console.log(currentTab+"This is before check");
+        if (currentTab >= tab.length) {
+            var formData = new FormData(document.getElementById('regForm'));
+            console.log(formData.get('Username'));
+            var htmlString = "<p>Username: " + formData.get('Username') + "</p>" +
+                 "<p>First Name: " + formData.get('fname') + "</p>" +
+                 "<p>Last Name: " + formData.get('lname') + "</p>" +
+                 "<p>Gender: " + formData.get('gender') + "</p>" +
+                 "<p>Nationality: " + formData.get('nationality') + "</p>" +
+                 "<p>Date: " + formData.get('date') + "</p>" +
+                 "<p>Email: " + formData.get('email') + "</p>" +
+                 "<p>Mobile: " + formData.get('mobile') + "</p>" +
+                 "<p>Address: " + formData.get('address') + "</p>" +
+                 "<p>Facebook: " + formData.get('facebook') + "</p>" +
+                 "<p>Twitter: " + formData.get('twiiter') + "</p>" +
+                 "<p>LinkedIn: " + formData.get('linkedin') + "</p>" +
+                 "<p>UG: " + formData.get('Ug') + "</p>" +
+                 "<p>PG: " + formData.get('pg') + "</p>" +
+                 "<p>Project 1: " + formData.get('project1') + "</p>" +
+                 "<p>Project 2: " + formData.get('project2') + "</p>" +
+                 "<p>Project 3: " + formData.get('project3') + "</p>";
+            document.getElementById("regForm").submit();
+            document.write(htmlString);
+            return false;
+        }
+        console.log(currentTab);
+        showtab(currentTab);
+    }
+}
+function validateArea(currentTab) {
+    console.log('this1');
+    if (currentTab == 0) {
+        // Validate Area here
+        var unamevalue = document.getElementById('Username').value;
+        var error = document.getElementsByClassName('error');
+        console.log(error);
+        if (!unamevalue.match('[A-Z][a-z]{4,}')) {
+            error[0].style.display = 'block';
+            y = tab[0].getElementsByTagName('input');
+            y[0].classname += "invalid";
+            console.log(y[0]);
+            return false;
+        }
+        else {
+            error[0].style.display = 'none';
+            return true;
+        }
+    }
+    else
+        return true;
+
+}
+function fixStepIndicator(n) {
+    // This function removes the "active" class of all steps...
+    var i, x = document.getElementsByClassName("step");
+    for (i = 0; i < x.length; i++) {
+        x[i].className = x[i].className.replace(" active", "");
+    }
+    //... and adds the "active" class on the current step:
+    x[n].className += " active";
+    if(n==x.length-1)
+        x[n].className+=" finish";
+}
+    </script>
+</body>
+
+</html>

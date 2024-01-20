@@ -1,0 +1,32 @@
+[
+    {
+        "firstName": "Vijay",
+        "lastName": "reddy",
+        "email": "asdv@ymail.com",
+        "mobile": ""
+    },
+    {
+        "firstName": "Akarsh",
+        "lastName": "Pai",
+        "email": "pai@gmail.com",
+        "mobile": "8989989908"
+    },
+    {
+        "firstName": "Pratheek",
+        "lastName": "Raj",
+        "email": "raj@hmail.com",
+        "mobile": "9989898989"
+    },
+    {
+        "firstName": "Kiran",
+        "lastName": "B",
+        "email": "kiran@gmail.com",
+        "mobile": "8967657213"
+    },
+    {
+        "firstName": "Ganesh",
+        "lastName": "",
+        "email": "ganesh@gmail.com",
+        "mobile": "9878231243"
+    }
+]

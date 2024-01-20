@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Best JOBs</title>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			background-color: #f1f1f1;
+		}
+
+		#regForm {
+			background-color: #ffffff;
+			margin: 100px auto;
+			padding: 40px;
+			width: 70%;
+			min-width: 300px;
+		}
+
+		h1 {
+			text-align: center;
+		}
+
+		div {
+			font-size: 21px;
+		}
+
+		input {
+			padding: 10px;
+			width: 100%;
+			font-size: 17px;
+			border: 1px solid #aaaaaa;
+		}
+
+		input[type="radio"] {
+			width: 10%;
+		}
+
+		select {
+			height: 40px;
+			width: 50%;
+			text-align: center;
+		}
+
+		input.invalid {
+			background-color: #ffdddd;
+		}
+
+		input.valid {
+			border: 1px green solid;
+		}
+
+		.tab,
+		.comp {
+			display: none;
+		}
+
+		.error {
+			color: red;
+		}
+
+		.noerror {
+			display: none;
+		}
+
+		button {
+			background-color: #4CAF50;
+			color: #ffffff;
+			border: none;
+			padding: 10px 20px;
+			font-size: 17px;
+			cursor: pointer;
+		}
+
+		button:hover {
+			opacity: 0.8;
+		}
+
+		#prevBtn {
+			background-color: #bbbbbb;
+		}
+
+		.step {
+			height: 15px;
+			width: 15px;
+			margin: 0 2px;
+			background-color: #bbbbbb;
+			border: none;
+			border-radius: 50%;
+			display: inline-block;
+			opacity: 0.5;
+		}
+
+		.step.active {
+			opacity: 1;
+		}
+
+		.step.finish {
+			background-color: #4CAF50;
+		}
+	</style>
+</head>
+
+<body>
+	<form id="regForm">
+		<h1>Register</h1>
+		<div class="tab">Account set-up:
+			<p><input placeholder="Username" oninput="validateUsername(this)" class="check" name="uname"></p>
+			<p id="invaliduname" class="error"></p>
+			<p><input type="password" class="check" placeholder="Password" oninput="validatePassword(this)" name="password"></p>
+			<p id="invalidpassword" class="error"></p>
+			<p><input type="password" class="check" placeholder="Confirm password" oninput="validateConfirmPassword(this)" name="cpassword"></p>
+			<p id="invalidcpassword" class="error"></p>
+		</div>
+		<div class="tab">Personal Details:
+			<p><input placeholder="First Name" class="check" oninput="validateUsername(this)" name="fname" id="nameerror"></p>
+			<p id="invalidfname" class="error"></p>
+			<p><input placeholder="Last Name" oninput="" name="lname"></p>
+			<p> Gender:
+				<input type="radio" name="gender" value="male" id="male" checked>
+				<label for="male">Male</label>
+				<input type="radio" name="gender" value="female" id="female">
+				<label for="female">Female</label>
+			</p>
+			<p>
+				<select name="nationality" onselect="">
+					<option value="indian">Indian</option>
+					<option value="afghan">Afghan</option>
+					<option value="albanian">Albanian</option>
+					<option value="algerian">Algerian</option>
+					<option value="american">American</option>
+					<option value="australian">Australian</option>
+					<option value="bahamian">Bahamian</option>
+					<option value="beninese">Beninese</option>
+					<option value="bhutanese">Bhutanese</option>
+					<option value="bolivian">Bolivian</option>
+					<option value="bosnian">Bosnian</option>
+					<option value="brazilian">Brazilian</option>
+					<option value="british">British</option>
+					<option value="bulgarian">Bulgarian</option>
+					<option value="cambodian">Cambodian</option>
+					<option value="canadian">Canadian</option>
+					<option value="chinese">Chinese</option>
+					<option value="colombian">Colombian</option>
+					<option value="cuban">Cuban</option>
+					<option value="dominican">Dominican</option>
+					<option value="dutch">Dutch</option>
+					<option value="egyptian">Egyptian</option>
+					<option value="filipino">Filipino</option>
+					<option value="finnish">Finnish</option>
+					<option value="french">French</option>
+					<option value="german">German</option>
+					<option value="greek">Greek</option>
+					<option value="israeli">Israeli</option>
+					<option value="italian">Italian</option>
+					<option value="jamaican">Jamaican</option>
+					<option value="japanese">Japanese</option>
+					<option value="new zealander">New Zealander</option>
+					<option value="nigerien">Nigerien</option>
+					<option value="north korean">North Korean</option>
+					<option value="pakistani">Pakistani</option>
+					<option value="papua new guinean">Papua New Guinean</option>
+					<option value="polish">Polish</option>
+					<option value="portuguese">Portuguese</option>
+					<option value="romanian">Romanian</option>
+					<option value="russian">Russian</option>
+					<option value="scottish">Scottish</option>
+					<option value="south african">South African</option>
+					<option value="south korean">South Korean</option>
+					<option value="spanish">Spanish</option>
+					<option value="ukrainian">Ukrainian</option>
+					<option value="zimbabwean">Zimbabwean</option>
+				</select>
+			</p>
+			<p>
+				<input type="date" class="check" name="dob" id="dob" oninput="validateDateOfBirth(this)">
+			</p>
+			<p id="invaliddob" class="error"></p>
+			</p>
+		</div>
+		<div class="tab">Contact:
+			<p><input type="email" class="check" name="email" placeholder="Enter your email" oninput="validateEmail(this)"></p>
+			<p id="invalidemail" class="error"></p>
+			<p><input type="tel" class="check" name="phone" placeholder="Enter your phone no." oninput="validatePhone(this)"></p>
+			<p id="invalidphone" class="error"></p>
+			<p><textarea id="address" class="check" name="address" placeholder="Enter your Address" rows="4" cols="50" oninput="validateAddress(this)"></textarea></p>
+			<p id="invalidaddress" class="error"></p>
+		</div>
+
+		<div class="tab">Social Profiles:
+			<p><input placeholder="Twitter" oninput="validateSocialProfiles()" name="twitter"></p>
+			<p><input placeholder="Facebook" oninput="validateSocialProfiles()" name="facebook"></p>
+			<p><input placeholder="Google" oninput="validateSocialProfiles()" name="google"></p>
+			<p id="invalidsocial" class="error"></p>
+		</div>
+		<div class="tab">Academic Details:
+
+			<p><input type="number" class="check" placeholder="UG CGPA" oninput="validateUGCGPA(this)" name="ugcgpa">
+			</p>
+			<p id="invalidugcgpa" class="error"></p>
+			<p><input type="number" class="check" placeholder="PG CGPA" oninput="validatePGCGPA(this)" name="pgcgpa">
+			</p>
+			<p id="invalidpgcgpa" class="error"></p>
+			<p><textarea id="project1" name="project1" placeholder="Project Title 1 with Abstract" rows="6" cols="70"
+					oninput="validateProject(this)"></textarea></p>
+			<p id="invalidproject1" class="error"></p>
+			<p><textarea id="project2" name="project2" placeholder="Project Title 2 with Abstract" rows="6" cols="70"
+					oninput="validateProject(this)"></textarea></p>
+			<p id="invalidproject2" class="error"></p>
+			<p><textarea id="project3" name="project3" placeholder="Project Title 3 with Abstract" rows="6" cols="70"
+					oninput="validateProject(this)"></textarea></p>
+			<p id="invalidproject3" class="error"></p>
+
+		</div>
+		<div class="tab">
+			<h3>Confirmation Registration:</h3>
+			<p>Username: <span id="displayUsername"></span></p>
+			<p>First Name: <span id="displayFirstName"></span></p>
+			<p>Last Name: <span id="displayLastName"></span></p>
+			<p>Gender: <span id="displayGender"></span></p>
+			<p>Nationality: <span id="displayNationality"></span></p>
+			<p>Date of Birth: <span id="displayDOB"></span></p>
+			<p>Email: <span id="displayEmail"></span></p>
+			<p>Phone: <span id="displayPhone"></span></p>
+			<p>Address: <span id="displayAddress"></span></p>
+			<p>Twitter: <span id="displayTwitter"></span></p>
+			<p>Facebook: <span id="displayFacebook"></span></p>
+			<p>Google: <span id="displayGoogle"></span></p>
+			<p>UG CGPA: <span id="displayUGCGPA"></span></p>
+			<p>PG CGPA: <span id="displayPGCGPA"></span></p>
+			<p>Project Titles: <br><span id="displayProject1"></span></p>
+			<p><span id="displayProject2"></span></p>
+			<p><span id="displayProject3"></span></p>
+			<p id="registrationSuccess" style="display: none; color: green;">Registration Successful!</p>
+
+		</div>
+		<div class="comp">
+			<p>Registered Successfully</p>
+		</div>
+
+		<div style="overflow:auto;">
+			<div style="float:right;">
+				<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+				<button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+			</div>
+		</div>
+
+		<div style="text-align:center;margin-top:40px;">
+			<span class="step"></span>
+			<span class="step"></span>
+			<span class="step"></span>
+			<span class="step"></span>
+			<span class="step"></span>
+			<span class="step"></span>
+		</div>
+	</form>
+	<script>
+		var currentTab = 0;
+		showTab(currentTab);
+
+		function validateUsername(usernameInput) {
+			const username = usernameInput.value;
+			if (currentTab == 0) {
+				errorElement = document.getElementById("invaliduname");
+			} else {
+				errorElement = document.getElementById("invalidfname");
+			}
+
+			if (username.length < 4) {
+				errorElement.innerHTML = "Must be at least 4 characters long.";
+				usernameInput.className = "invalid";
+			} else if (!/^[A-Z][a-zA-Z0-9]*$/.test(username)) {
+				errorElement.innerHTML = "Must start with a capital letter and contain only letters and numbers.";
+				usernameInput.className = "invalid";
+			} else {
+				errorElement.innerHTML = "";
+				usernameInput.className = "valid";
+			}
+		}
+
+		function validatePassword(passwordInput) {
+			const password = passwordInput.value;
+			const errorElement = document.getElementById("invalidpassword");
+			const confirmPasswordInput = document.getElementsByName("cpassword")[0];
+			const confirmPassword = confirmPasswordInput.value;
+
+			const passwordRequirements = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&+=]).{8,}$/;
+
+			if (!passwordRequirements.test(password)) {
+				errorElement.innerHTML = "Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one digit, and one special character (@#$%^&+=).";
+				passwordInput.className = "invalid";
+				confirmPasswordInput.className = "invalid";
+			} else {
+				errorElement.innerHTML = "";
+				passwordInput.className = "valid";
+				validateConfirmPassword(confirmPasswordInput);
+			}
+		}
+
+		function validateConfirmPassword(confirmPasswordInput) {
+			const confirmPassword = confirmPasswordInput.value;
+			const errorElement = document.getElementById("invalidcpassword");
+			const passwordInput = document.getElementsByName("password")[0];
+			const password = passwordInput.value;
+
+			if (confirmPassword !== password) {
+				errorElement.innerHTML = "Passwords do not match.";
+				confirmPasswordInput.className = "invalid";
+			} else {
+				errorElement.innerHTML = "";
+				confirmPasswordInput.className = "valid";
+			}
+		}
+
+		function validateDateOfBirth(dobInput) {
+			const dob = new Date(dobInput.value);
+			const currentDate = new Date();
+			const age = currentDate.getFullYear() - dob.getFullYear();
+			const errorElement = document.getElementById("invaliddob");
+
+			if (isNaN(dob.getTime()) || age < 18) {
+				errorElement.innerHTML = "Please select a valid date of birth, and you must be at least 18 years old.";
+				dobInput.className = "invalid";
+			} else {
+				errorElement.innerHTML = "";
+				dobInput.className = "valid";
+			}
+		}
+
+		function validateEmail(emailInput) {
+			const email = emailInput.value;
+			const errorElement = document.getElementById("invalidemail");
+			const emailPattern = /^[a-zA-Z0-9]+[a-zA-Z0-9.]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+			if (!emailPattern.test(email)) {
+				errorElement.innerHTML = "Please enter a valid email address.";
+				emailInput.className = "invalid";
+			} else {
+				errorElement.innerHTML = "";
+				emailInput.className = "valid";
+			}
+		}
+
+		function validatePhone(phoneInput) {
+			const phone = phoneInput.value;
+			const errorElement = document.getElementById("invalidphone");
+			const phonePattern = /^\d{10}$/;
+
+			if (!phonePattern.test(phone)) {
+				errorElement.innerHTML = "Phone number must be 10 digits long.";
+				phoneInput.className = "invalid";
+			} else {
+				errorElement.innerHTML = "";
+				phoneInput.className = "valid";
+			}
+		}
+
+		function validateSocialProfiles() {
+			const twitter = document.getElementsByName("twitter")[0].value;
+			const facebook = document.getElementsByName("facebook")[0].value;
+			const google = document.getElementsByName("google")[0].value;
+			const errorElement = document.getElementById("invalidsocial");
+
+			if (!twitter && !facebook && !google) {
+				errorElement.innerHTML = "Please provide at least one social profile (Twitter, Facebook, or Google).";
+				document.getElementsByName("twitter")[0].className = "invalid";
+				document.getElementsByName("facebook")[0].className = "invalid";
+				document.getElementsByName("google")[0].className = "invalid";
+			} else {
+				errorElement.innerHTML = "";
+				document.getElementsByName("twitter")[0].className = "valid";
+				document.getElementsByName("facebook")[0].className = "valid";
+				document.getElementsByName("google")[0].className = "valid";
+			}
+		}
+
+		function validateUGCGPA(ugcgpaInput) {
+			const ugcgpa = ugcgpaInput.value;
+			const errorElement = document.getElementById("invalidugcgpa");
+
+			if (ugcgpa < 0 || ugcgpa > 10 || isNaN(ugcgpa)) {
+				errorElement.innerHTML = "Please enter a valid UG CGPA between 0 and 10.";
+				ugcgpaInput.className = "invalid";
+			} else {
+				errorElement.innerHTML = "";
+				ugcgpaInput.className = "valid";
+			}
+		}
+
+		function validatePGCGPA(pgcgpaInput) {
+			const pgcgpa = pgcgpaInput.value;
+			const errorElement = document.getElementById("invalidpgcgpa");
+
+			if (pgcgpa < 0 || pgcgpa > 10 || isNaN(pgcgpa)) {
+				errorElement.innerHTML = "Please enter a valid PG CGPA between 0 and 10.";
+				pgcgpaInput.className = "invalid";
+			} else {
+				errorElement.innerHTML = "";
+				pgcgpaInput.className = "valid";
+			}
+		}
+
+		function validateProject(projectInput) {
+			const project = projectInput.value;
+			const errorElement = document.getElementById(`invalid${projectInput.name}`);
+
+			if (project.trim() === "") {
+				errorElement.innerHTML = "Please provide the project title with its abstract.";
+				projectInput.className = "invalid";
+			} else {
+				errorElement.innerHTML = "";
+				projectInput.className = "valid";
+			}
+		}
+
+		function showConfirmationDetails() {
+			document.getElementById("displayUsername").innerHTML = document.getElementsByName("uname")[0].value;
+			document.getElementById("displayFirstName").textContent = document.getElementsByName("fname")[0].value;
+			document.getElementById("displayLastName").textContent = document.getElementsByName("lname")[0].value;
+			document.getElementById("displayGender").textContent = document.querySelector('input[name="gender"]:checked').value;
+			document.getElementById("displayNationality").textContent = document.getElementsByName("nationality")[0].value;
+			document.getElementById("displayDOB").textContent = document.getElementsByName("dob")[0].value;
+			document.getElementById("displayEmail").textContent = document.getElementsByName("email")[0].value;
+			document.getElementById("displayPhone").textContent = document.getElementsByName("phone")[0].value;
+			document.getElementById("displayAddress").textContent = document.getElementsByName("address")[0].value;
+			document.getElementById("displayTwitter").textContent = document.getElementsByName("twitter")[0].value;
+			document.getElementById("displayFacebook").textContent = document.getElementsByName("facebook")[0].value;
+			document.getElementById("displayGoogle").textContent = document.getElementsByName("google")[0].value;
+			document.getElementById("displayUGCGPA").textContent = document.getElementsByName("ugcgpa")[0].value;
+			document.getElementById("displayPGCGPA").textContent = document.getElementsByName("pgcgpa")[0].value;
+			document.getElementById("displayProject1").textContent = document.getElementsByName("project1")[0].value;
+			document.getElementById("displayProject2").textContent = document.getElementsByName("project2")[0].value;
+			document.getElementById("displayProject3").textContent = document.getElementsByName("project3")[0].value;
+		}
+
+		function showTab(n) {
+			var x = document.getElementsByClassName("tab");
+			x[n].style.display = "block";
+			showConfirmationDetails();
+			if (n == 0) {
+				document.getElementById("prevBtn").style.display = "none";
+			} else {
+				document.getElementById("prevBtn").style.display = "inline";
+			}
+			if (n == (x.length - 1)) {
+				document.getElementById("nextBtn").innerHTML = "Submit";
+			} else {
+				document.getElementById("nextBtn").innerHTML = "Next";
+			}
+			fixStepIndicator(n)
+		}
+
+		function nextPrev(n) {
+			var x = document.getElementsByClassName("tab");
+			if (n == 1 && !validateForm()) return false;
+			x[currentTab].style.display = "none";
+			currentTab = currentTab + n;
+			if (currentTab >= x.length) {
+				//document.getElementById("regForm").submit(); 
+				var x = document.getElementsByClassName("comp");
+				x[0].style.display = "block";
+				document.getElementById("prevBtn").style.display = "none";
+				document.getElementById("nextBtn").style.display = "none";
+				return false;
+			}
+			showTab(currentTab);
+		}
+
+		function validateForm() {
+			var x, y, i, valid = true;
+			x = document.getElementsByClassName("tab");
+			y = x[currentTab].getElementsByClassName("check");
+			for (i = 0; i < y.length; i++) {
+				if (y[i].value == "") {
+					y[i].className += " invalid";
+					valid = false;
+				}
+			}
+			if (valid) {
+				document.getElementsByClassName("step")[currentTab].className += " finish";
+			}
+			return valid;
+		}
+
+		function fixStepIndicator(n) {
+			var i, x = document.getElementsByClassName("step");
+			for (i = 0; i < x.length; i++) {
+				x[i].className = x[i].className.replace(" active", "");
+			}
+			x[n].className += " active";
+		}
+	</script>
+</body>
+
+</html>

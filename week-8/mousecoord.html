@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border:1px solid black;
+            padding: 5px;
+        }
+        canvas{
+            border:1px solid black;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function coordinates(event)
+        {
+            document.getElementById("coordinate").innerHTML="X: "+event.offsetX+" Y: "+event.offsetY;
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <canvas id="canvas" width="800px" height="600px" onmousemove="coordinates(event)">
+        </canvas>
+        <p id="coordinate"></p>
+    </div>
+    
+</body>
+</html>

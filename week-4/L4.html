@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>PASSPORT APPLICATION</title>
+		<style>
+		
+		table
+		{border-collapse: collapse;
+		}
+		tr,td{
+			padding: 2px 4px 2px 10px;
+		}
+		.container{
+			position: absolute;
+			border: 1px solid rgba(255, 0, 0, 0);
+			padding: 20px;
+			width: 900px;
+			left: 400px;
+		}
+		.heading{
+			padding-left:400px;
+		}
+		
+		</style>
+	</head>
+		<body>
+			<div class="heading" style="border: 1px soild black;" >
+		<h1 style="color:lightskyblue ;">USER REGISTRATION</h1>
+		<br>
+		<p><pre style="font-family: 'Times New Roman', Times, serif;">Important Information: Passport application can be processed at any                  Fields marked with asterisk (*) are mandatory</pre> PSK/POPSK/PSLK WITHIN INDIA irrespective of your residential address.</p>  
+				
+			<ul>
+				<li><a target="_blank" href="https://portal1.passportindia.gov.in/AppOnlineProject/online/apptAvailStatus">Click here</a>check the appointment availability at all PSK/POPSK/PSLK.</li>
+				<li><a target="_blank" href="https://portal2.passportindia.gov.in/AppOnlineProject/pdf/CIR_0186917_Y.pdf">Click here</a>know more about Apply Anywhere in India scheme for Passport Services.</li>
+			</ul>
+		</div>
+		<form style="position: relative;">
+		<div class="container">
+				<table>
+					<tr>
+					<td>Resgistation to apply at<b style="color: red;">*</b></td>
+					<td><input type="radio" name="option" id="cpv" value="CPVDelhi">CVP DELHI
+					<br>
+					<input type="radio" name="option" id="passport" value="Passportoffice">Passportoffice</td>
+					<td style="font-size: 12px;">Select the 'CPV Delhi' option to apply for Diplomatic/Official passport at Consular, Passport and Visa (CPV) division, Delhi.</td>
+					</tr>
+					<tr>
+						<td>
+							Passport Office<b style="color: red;">*</b></td>
+								<td><select class="office" name="office" >
+								<option>---Select---</option>
+								<option value="goa">Goa</option>
+								<option value="amritsar">Amritsar</option>
+								<option value="bangalore">Bangalore</option>
+								<option value="delhi">Delhi</option>
+								<option value="surat">Surat</option>
+								<option value="jaipur">Jaipur</option>
+								<option value="pune">Pune</option>
+								<option value="raipur">Raipur</option>
+								</select></td>
+								<td style="font-size: 12px;">Tibetan Refugees applying for Identity Certificate must register with 'Delhi' Passport Office.</td>
+					</tr>	
+					<tr>
+						<td>Given Name (MAX 45 Characters)<b style="color: red;">*</b></td>
+						<td><input type="text" maxlength="45" name="option" id="name" required></td>
+						<td style="font-size: 12px;">First Name + Middle Name Initials and honorifics (e.g. Dr.,Col.,etc.) are not allowed.</td>
+					</tr>
+					<tr>
+						<td>Surname(MAX 45 Characters)</td>
+						<td><input type="text" maxlength="45" name="option" id="sname"></td>
+					</tr>
+					<tr>
+						<td>Date of month(DD/MM/YYYY)<b style="color: red;">*</b></td>
+						<td><input type="date" name="option" id="dob" required></td>
+					</tr>
+					<tr>
+						<td>Email Id(Max 35 Characters)<b style="color: red;">*</b></td>
+						<td><input type="email" name="option" id="email" required maxlength="35" pattern="example@gmail.com"></td>
+					</tr>
+					<tr>
+						<td><label >Do you want your Login Id to be same as E-mail Id?</label></td>
+						<td><input type="radio" name="option" id="emailyes" value="YES">YES
+						<input type="radio" name="option" id="emailno" value="NO" checked>NO<br></td>
+					</tr>	
+					<tr>
+						<td><label>Login Id<b style="color: red;">*</b></label></td>
+						<td><input type="text" name="option" id="loginname" required></td> 
+						<td><a href="https://portal2.passportindia.gov.in/AppOnlineProject/user/UserRegistrationActionDBAuth" style="text-decoration: none;">Check availability</a></td>
+					</tr>
+					<tr>
+						<td><label>Password<b style="color: red;">*</b></label></td>
+						<td><input type="password" name="option" id="password" required></td>
+						<td><a href="https://portal2.passportindia.gov.in/AppOnlineProject/onlineHtml/passwordPolicy.html" style="text-decoration: none;">Password Policy</a></td>
+					</tr>
+					<tr>
+						<td><label>Confirm Password<b style="color: red;">*</b></label></td>
+						<td><input type="password" name="option" id="cpassword" required></td>
+					</tr>
+					<tr>
+						<td>
+						<label>Hint Question<b style="color: red;">*</b></label></td>
+							<td><select name="hintq" id="hints">
+							<option value="goa">Birth date</option>
+							<option value="Favourite color">Favourite color</option>
+							<option value="Favouritegames">Favourite games</option>
+							<option value="Nickname">Nick name</option></select><br>
+						</td>
+					</tr>
+					<tr>
+						<td><label>Hint Answer<b style="color: red;">*</b></label></td>
+						<td><input type="text" name="option" id="hintans" required><br></td>
+					</tr>
+					<tr>
+						<td>
+						<label>Enter  characters display<b style="color: red;">*</b></label></td>
+						<td><img class="pic" src="k4px.png" alt="capcha" width="100px" height="100px"></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input type="text" name="option" id="capcha"></td>
+					</tr>
+				</table>	
+		<hr>
+		<div style="text-align: center;">
+			<input style="background-color:aqua;" type="Submit" name="button" id="submitbtn" value="Register">
+			<input style="background-color:aqua;" type="reset" name="button" id="resetbtn" value="Clear">
+		</div>
+		</div>
+		</form>
+		</body>
+</html>		

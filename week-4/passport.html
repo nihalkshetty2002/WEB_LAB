@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Passport</title>
+    <style>
+        a{
+            color: blue;
+        }
+
+        .place{
+            width:175px;
+            font-size: medium;
+	    text-align:center;
+        }
+
+	sup{
+		color:red;
+	}
+
+        .gfg {
+            border-spacing:0 15px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 style="color: blue;">User Registration</h1>
+    <p><pre style="font-family: 'Times New Roman', Times, serif;">Important Information: Passport application can be processed at any                  Fields marked with asterisk (*) are mandatory</pre> PSK/POPSK/PSLK WITHIN INDIA irrespective of your residential address.</p>
+<ul>
+    <li><a href="https://portal1.passportindia.gov.in/AppOnlineProject/online/apptAvailStatus">Click here </a>to check the appointment availability at all PSK/POPSK/PSLK.</li>
+    <li><a href="https://portal2.passportindia.gov.in/AppOnlineProject/pdf/CIR_0186917_Y.pdf">Click here </a>to know more about Apply Anywhere in India scheme for Passport Services.</li>
+</ul><br>
+
+<form action="" method="post">
+
+<table class="gfg">
+<tr>
+    <td rowspan="2">Register to apply at<sup>*</sup></td>
+    <td><input type="radio" id="Office" name="rad" value="CPV Delhi">CPV Delhi</td>
+    <td style="font-size: 12px;" rowspan="2">Select the 'CPV Delhi' option to apply for 
+        Diplomatic/Official passport at Consular, Passport and Visa (CPV) division, Delhi.</td>
+</tr>
+<tr>
+    <td><input type="radio" id="Office" name="rad" value="Passport Office" checked>Passport Office</td>
+</tr>
+<tr><br>
+    <td>Passport Office <sup>*</sup></td>
+    <td>
+        <select name="place" class="place">
+            <option>---Select---</option>
+            <option value="Bengaluru">Bengaluru</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Coimbatore">Coimbatore</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Goa">Goa</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Jaipur">Jaipur</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Pune">Pune</option>
+        </select>
+    </td>
+    <td style="font-size: 12px;">Tibetan Refugees applying for Identity Certificate must register with 'Delhi' Passport Office.</td>
+</tr>
+
+<tr>
+    <td>Given Name (Max 45 Characters)<sup>*</sup></td>
+    <td><input type="text" required></td>
+    <td style="font-size: 12px;"><pre>First Name + Middle Name
+Initials and honorifics (e.g. Dr.,Col.,etc.) are not allowed.</pre></td>
+</tr>
+
+<tr>
+    <td>Date of Birth (DD/MM/YYYY)<sup>*</sup>	</td>
+    <td><input type="date" class="place" required></td>
+</tr>
+
+<tr>
+    <td>E-mail Id (Max 35 Characters)<sup>*</sup></td>
+    <td><input type="email" required></td>
+</tr>
+
+<tr>
+    <td>Do you want your Login Id
+        to be same as E-mail Id?</td>
+    <td><input type="radio" name="em" value="Yes">Yes
+        <input type="radio" name="em" value="No">No</td>
+</tr>
+
+<tr>
+    <td>Login Id<sup>*</sup></td>
+    <td><input type="text" required></td>
+    <td><a href="https://portal2.passportindia.gov.in/AppOnlineProject/user/UserRegistrationActionDBAuth" style="text-decoration: none;">Check availability</a></td>
+</tr>
+
+<tr>
+    <td>Password<sup>*</sup></td>
+    <td><input type="text" required></td>
+    <td><a href="https://portal2.passportindia.gov.in/AppOnlineProject/onlineHtml/passwordPolicy.html" style="text-decoration: none;">Password Policy</a></td>
+</tr>
+
+<tr>
+    <td>Confirm Password<sup>*</sup></td>
+    <td><input type="text" required></td>
+    
+</tr>
+
+<tr>
+    <td>Hint Question<sup>*</sup></td>
+    <td>
+        <select name="qstn" id="qstn" class="place">
+            <option>---Select---</option>
+            <option value="Birth City">Birth City</option>
+            <option value="Favourite Food">Favourite Food</option>
+            <option value="Favourite Cricket">Favourite Cricket</option>
+            <option value="Favourite Color">Favourite Color</option>
+            <option value="First Color">First Color</option>
+            <option value="First Car">First Car</option>
+        </select>
+    </td>
+</tr>
+
+<tr>
+    <td>Hint Answer<sup>*</sup></td>
+    <td><input type="text" required></td>
+</tr>
+
+<tr>
+    <td rowspan="2">Enter Characters Displayed *</td>
+    <td><input type="image" src="C:\Users\mca\Downloads\Screenshot.png" alt="captcha" width="210" height="100"></td>
+</tr>
+
+<tr>
+    <td><input type="text" required></td>
+</tr>
+
+<tr>
+    <td>.</td>
+    <td><pre><input type="submit" value="submit" style="background-color: blue;color: white;">   <input type="Button" value="Clear" style="background-color: blue;color: white;"></pre></td>
+</tr>
+
+</table>
+</form>
+</body>
+</html>

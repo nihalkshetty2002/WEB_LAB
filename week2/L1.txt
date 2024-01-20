@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta charset="UTF-8">
+            <title>MCA TIMETABLE</title>
+            <style>
+            table, th, td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            }
+            .maintt{
+                width: 100%;
+            }
+            .minitt{
+            width: 100%; 
+            }
+            .smalltt{
+                width: 100%;
+                text-align: center;
+            }
+
+            .lightblue{
+                background-color: lightblue;
+                text-align: center;
+                height: auto;
+            }
+            .day{
+                text-align: center;
+            }
+            .sub{
+                font-weight: bold;
+                }
+            .break{
+                background: lightgray;
+            }
+            </style>
+            <img src="MIT.png" width="700" height="150" alt="MIT LOGO">
+            <h1 style="text-align: center">DEPARTMENT OF DATA SCIENCE & COMPUTER APPLICATIONS</h1>
+            <h3 style="text-align: center;">TIMETABLE: JUL - NOV 2023</h3>
+    </head>
+            <body>
+                <table class="minitt">
+                    <tr>
+                        <td style="border-color:#ffff;text-align: left;">Semester& Section: I MCA-A</td>
+                        <td style="border-color: #ffff;text-align: center;">Lecture Hall: AB4 ICL 507</td>
+                        <td style="border-color: #ffff;text-align: right;">Effective from: July 31,2023</td>
+                    </tr>
+                </table>
+                <table class="maintt">
+                    <!--<caption>Timetable</caption>-->
+                    <colgroup>
+                    <col span="1" style="background-color:#ecb613">
+                    </colgroup>
+                    <tr>
+                        <th style="background:white;color: red;"><br>REGULAR</th>
+                        <th class="lightblue">08.00-9.00</th>
+                        <th class="lightblue">09.00-10.00</th>
+                        <th class="lightblue">10.00-10.30</th>
+                        <th class="lightblue">10.30-11.30</th>
+                        <th class="lightblue">11.30-12.30</th>
+                        <th class="lightblue">12.30-01.00</th>
+                        <th class="lightblue">01.00-02.00</th>
+                        <th class="lightblue">02.00-03.00</th>
+                        <th class="lightblue">03.00-03.30</th>
+                        <th class="lightblue">03.30-04.30</th>
+                        <th class="lightblue">04.30-05.30</th>
+                    </tr>
+                    <tr class="day">
+                            <td><b>Monday</b></td>
+                            <td></td>
+                            <td class="sub">OOP</td>
+                            <td class="break">Break</td>
+                            <td class="sub">WEB</td>
+                            <td class="sub"  >DBMS</td>
+                            <td colspan="2">Lunch Break</td>
+                            <td colspan="3">OOP Lab1-B1(RH,VR)<br><hr style="border: 1px solid;">DBMS Lab2-B2(AH,RA)</td>
+                            <td></td>
+                    </tr>
+                    <tr class="day">
+                            <td><b>Tuesday</b></td>
+                            <td></td>
+                            <td colspan="3"  >RMTC Lab6-B2(DRS,RK)</td>
+                            <td class="break" colspan="2"  >Lunch Break</td>
+                            <td class="sub">Maths</td>
+                            <td class="sub">OOP</td>
+                            <td class="break">break</td>
+                            <td class="sub" >DBMS*</td>
+                            <td> </td></tr>
+                    <tr class="day">
+                        <td><b>Wednesday</b></td>
+                        <td></td>
+                        <td class="sub" >WEB</td>
+                        <td class="break"  >Break</td>
+                        <td class="sub" >Maths</td>
+                        <td class="sub" >DBMS</td>
+                        <td class="break" colspan="2" >Lunch Break</td>
+                        <td colspan="3">DBMS Lab2-B1(AH,VM)<br><hr style="border: 1px solid;">WEB Lab5-B2(AB,NKN)</td> 
+                        <td class="break" colspan="3"></td>
+                    </tr>
+                    <tr class="day"><td><b>Thursday</b></td>
+                        <td></td>
+                        <td colspan="3" >WEB Lab5-B1(AB,RM)</td>
+                        <td class="break" colspan="2"  >Lunch Break</td>
+                        <td class="sub">OOP</td>
+                        <td class="sub">RMTC*</td>
+                        <td class="break">Break</td>
+                        <td class="sub" >WEB</td>
+                        <td class="sub">DBMS</td></tr>
+                    <tr class="day">
+                        <td  ><b>Friday</b></td>
+                        <td class="sub" >Maths</td>
+                        <td class="sub" >WEB*</td>
+                        <td class="break"  >Break</td>
+                        <td class="sub" >OOP</td>
+                        <td class="sub" >RMTC</td>
+                        <td class="break" colspan="2" >Lunch Break</td>
+                        <td colspan="3"  >OOP Lab1-B2(PPK,RH,RMN)</td>
+                        <td class="break"></td>
+                    </tr>
+                    <tr class="day">
+                        <td  ><b>Saturday</b></td>
+                        <td  ></td>
+                        <td colspan="3"  >RMTC Lab6-B1(DRS,RK)</td>
+                        <td colspan="2" class="break"  >Lunch Break</td>
+                        <td  class="sub" >WEB</td>
+                        <td class="sub" >DBMS</td>
+                        <td class="break"  >Break</td>
+                        <td class="sub" >Maths</td>
+                    </tr>
+                </table>
+                        <br>
+                <table class="smalltt">
+                        <!--<caption>Timetable</caption>-->
+                        <tr>
+                            <th><br>Subject Code</th>
+                            <th>Subject Name</th>
+                            <th  >Faculty</th>
+                            <th>Subject Code</th>
+                            <th>Subject Name</th>
+                            <th>Faculty</th>
+                        </tr>
+                            <tr>
+                                <td  >MAT 4111</td>
+                                <td  >Computational Mathematics(maths)</td>
+                                <td  >Dr Shoba M E(SME)</td>
+                                <td  >MCA 4141</td>
+                                <td  >Database Management System Lab</td>
+                                <td  >Ms.Archana H(AH)/Mr.Vinayak M(VM)/Mrs.Rashmi A(RA)</td>
+                            </tr>
+                            <tr>
+                                <td  >MCA 4121</td>
+                                <td  >Object Oriented Programming(OOP)</td>
+                                <td  >Dr.Poornima Panduranga K(PPK)</td>
+                                <td  >MCA 4141</td>
+                                <td  >Object Oriented Programming Lab</td>
+                                <td  >Dr.Poornima Panduranga K(PPK)/Dr. Ranguram Holla(RH)/Dr.Vidya Rao(VR)/Mrs.Rashmi A(RA)</td>
+                            </tr>
+                            <tr>
+                                <td  >MCA 4122</td>
+                                <td  >Database Management System(DBMS)</td>
+                                <td  >Dr.Vinayak Mantoor(VM)</td>
+                                <td  >MCA 4143</td>
+                                <td  >Web Technologies Lab</td>
+                                <td  >Mr.Akshay Bhat(AB)/Mr.Nirmal K N(NKN)/Mrs.Rashmi A(RA)</td>
+                            </tr>
+                            <tr>
+                                <td  >MCA 4123</td>
+                                <td  >Web Technologies(WEB)</td>
+                                <td  >Dr.Girisha S(GS)</td>
+                                <td rowspan="2"  >HUM 5051</td>
+                                <td rowspan="2"  >RMTC-Lab</td>
+                                <td rowspan="2"  >Dr.Dasharatraj K Shetty(DRS)/Dr.RamaKrshina M.</td>
+                            </tr>
+                            <tr>
+                                <td  >HUM 5051</td>
+                                <td  >Research Methodology & Technical Communication(RMTC)</td>
+                                <td  >(MK)</td>
+                            </tr>
+                            
+                </table>
+            </body>
+                    
+                    
+</html>

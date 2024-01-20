@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        var selectelement =document.getElementById("list");
+        selectelement.addEventListener("change",function()
+        {
+            var seletedvalue= selectelement.value;
+            var url= seletedvalue+".html";
+            var newwindow=window.open(url,'NewWindow');
+            newwindow.focus();
+        });
+        // function goToNewPage() {
+        //     var url = document.getElementById('list').value;
+        //     if (url != 'none') {
+        //         window.location = url;
+        //     }
+        // }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>JS IN DROPDOWN MENU</H1>
+    <select name="list" id="list">
+        <option value='none' selected>select</option>
+        <option value="l1.html">OPTION 1</option>
+        <option value="l2.html">OPTION 2</option>
+        <option value="l1.html">OPTION 3</option>
+    </select>
+</form>
+
+
+</body>
+</html>

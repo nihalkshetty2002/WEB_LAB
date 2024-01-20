@@ -1,0 +1,265 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/CSS">
+*{
+ box-sizing: border-box;
+} 
+html {
+ font-family: "Lucida Sans", sans-serif;
+}
+header {
+ background-color:black;
+ color:white;
+ text-align:center;
+ padding:5px;
+}
+section nav {
+ line-height:30px;
+ background-color:#eeeeee;
+ height:300px;
+ width:30%;
+ float:left;
+ padding:5px;
+ height:100%;
+border:10px black solid
+}
+section article {
+ width:70%;
+ float:left; 
+ padding:10px;
+ border:10px black solid
+}
+footer {
+ background-color:black;
+ color:white;
+ clear:both;
+ text-align:center;
+ padding:5px;
+}
+ul {
+ 
+ width:100%;
+height:100px;
+border:10px solid black;
+ list-style-type: none;
+ margin: 0;
+ padding: 0;
+ background-color: gray;
+overflow:hidden;
+}
+li{float:left}
+li a{
+ display: inline-block;
+ color: white;
+ text-align: center;
+ padding: 14px 16px;
+ text-decoration: none;
+}
+li a:hover{
+ background-color: orange;
+}
+.dropdown-content {
+ display: none;
+ position: absolute;
+ background-color: #f9f9f9;
+width:100px;
+ min-width:70px;
+}
+.dropdown-content a {
+ color: black;
+ padding: 12px 16px;
+ text-decoration: none;
+ display: inline-block;
+ text-align: left;
+}
+.dropdown-content a:hover {background-color: teal; min-width: 70px;}
+.dropdown:hover .dropdown-content {
+ display: block;
+}
+[class*="col-"] {
+ width: 100%;
+}
+.col-3{
+display:none;
+}
+@media only screen and (min-width: 768px){
+ /* For desktop: */
+ .col-1 {width: 8.33%;}
+ .col-2 {width: 16.66%;}
+ .col-3 {width: 25%; display:block}
+ .col-4 {width: 33.33%;}
+ .col-5 {width: 41.66%;}
+ .col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+ .col-8 {width: 66.66%;}
+ .col-9 {width: 75%;}
+ .col-10 {width: 83.33%;}
+ .col-11 {width: 91.66%;}
+ .col-12 {width: 100%;}
+}
+
+@media (-webkit-device-pixel-ratio: 3) {
+ p {
+ color: red;
+ }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2.1) {
+ p {
+ font-size: 1.5em;
+ }
+}
+
+@media (-webkit-max-device-pixel-ratio: 3) {
+ p {
+ background: yellow;
+ }
+}
+</style>
+</head>
+<body>
+<header>
+<h1>Header</h1>
+</header>
+<nav>
+<ul>
+ <li><a href="#home">Home</a></li>
+ <li class="dropdown">
+ <a href="#" class="dropbtn">About</a>
+ <div class="dropdown-content">
+ <a href="#">History</a>
+<a href="#">Business</a>
+<a href="#">Partners</a>
+<a href="#">Branches</a>
+ </div>
+ </li>
+ <li><a href="#news">News</a></li>
+ <li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+<section>
+<nav class="col-3">
+Home<br>
+News<br>
+Contact<br>
+About<br>
+</nav>
+<article class="col-9">
+<p>This is a paragraph. This is a paragraph.<span class="bold">Bold text Bold text</span> This is a 
+paragraph. This is a paragraph.This is a paragraph. This is a paragraph.<span class="bold">Bold text 
+Bold text</span> This is a paragraph. This is a paragraph.This is a paragraph. This is a 
+paragraph.<span class="bold">Bold text Bold text</span> This is a paragraph. This is a 
+paragraph.This is a paragraph. This is a paragraph.<span class="bold">Bold text Bold text</span> 
+This is a paragraph. This is a paragraph.This is a paragraph. This is a paragraph.<span 
+class="bold">Bold text Bold text</span> This is a paragraph. This is a paragraph.This is a paragraph. 
+This is a paragraph.<span class="bold">Bold text Bold text</span> This is a paragraph. This is a 
+paragraph.This is a paragraph. This is a paragraph.<span class="bold">Bold text Bold text</span> 
+This is a paragraph. This is a paragraph.This is a paragraph. This is a paragraph.<span 
+class="bold">Bold text Bold text</span> 
+This is a paragraph. This is a paragraph.
+This is a paragraph. This is a paragraph.<span class="bold">Bold text Bold text</span> 
+This is a paragraph. This is a paragraph.</p>
+<h1>Article</h1>
+<p>
+Article content Article content Article content Article content Article content Article content Article 
+content
+Article content Article content Article content Article content
+</p>
+<p>
+Article content Article content Article content Article content Article content Article content Article 
+content
+Article content Article content Article content Article content
+</p>
+<p>
+Article content Article content Article content Article content Article content Article content Article 
+content
+Article content Article content Article content Article content
+</p>
+<p>
+Article content Article content Article content Article content Article content Article content Article 
+content
+Article content Article content Article content Article content
+</p>
+<p>
+Article content Article content Article content Article content Article content Article content Article 
+content
+Article content Article content Article content Article content
+</p>
+</article>
+</section>
+<footer>
+footer
+</footer>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #clock {
+            font-size: 48px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Digital Clock</h1>
+    <div id="clock"></div>
+
+    <script>
+        function updateClock() {
+            const clockElement = document.getElementById('clock');
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            const timeString = `${hours}:${minutes}:${seconds}`;
+            clockElement.textContent = timeString;
+            
+            // Update the clock every second
+            setTimeout(updateClock, 1000);
+        }
+
+        // Initial call to start the clock
+        updateClock();
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+</head>
+<body>
+    <h1>Digital Clock</h1>
+    <div id="clock"></div>
+
+    <script>
+        function updateClock() {
+            const clockElement = document.getElementById('clock');
+            const now = new Date();
+            const timeString = now.toLocaleTimeString();
+            clockElement.textContent = timeString;
+        }
+
+        // Update the clock every second
+        setInterval(updateClock, 1000);
+        
+        // Initial call to display the clock immediately
+        updateClock();
+    </script>
+</body>
+</html>

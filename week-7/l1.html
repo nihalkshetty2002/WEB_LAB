@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+</head>
+<body>
+<script>
+function press()
+{ 
+	alert("hello!,this is an alert box");
+}
+
+function press1() 
+{
+  var txt=confirm("This is an Confirm box"); 
+	if(txt==true)  
+  {
+    txt=("You pressed OK!");
+  } 
+  else 
+  {
+    txt=("You pressed Cancel!");
+  } 
+  document.getElementById("demo").innerHTML=txt;  
+}
+ function press2()
+ {
+	var text;
+	var person=prompt("This is a prompt box");
+	if(person!=true)
+	{
+	text="HELLO "+ person +" how are you?";
+	}
+	document.getElementById("demo1").innerHTML=text; 
+}
+
+
+</script>
+<h1>VARIOUS BOXES SUPPORTED in JS</h1>
+	<h2>ALERT BOX</h2>
+	<p>An alert box is often used if you want to make sure information comes through to the user.
+	When an alert box pops up, the user will have to click "OK" to proceed.</p>
+	<button onclick="press()">ALERT BOX</button>
+	
+	<h2>CONFIRM BOX</h2>
+	<p>A confirm box is often used if you want the user to verify or accept something.
+	When a confirm box pops up, the user will have to click either "OK" or "Cancel" to proceed.
+	If the user clicks "OK", the box returns true. If the user clicks "Cancel", the box returns false.</p>
+	<button onclick="press1()">CONFIRM BOX</button>
+	<p id="demo"></p>
+	
+	<h2>PROMPT BOX</h2>
+	<p>A prompt box is often used if you want the user to input a value before entering a page.
+	When a prompt box pops up, the user will have to click either "OK" or "Cancel" to proceed after entering an input value.
+	If the user clicks "OK" the box returns the input value. If the user clicks "Cancel" the box returns null.</p>
+	<button onclick="press2()">PROMPT BOX</button>
+	<p id="demo1"></p>
+	
+
+</body>
+</html>
